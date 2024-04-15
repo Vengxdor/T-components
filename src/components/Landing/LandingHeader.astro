@@ -1,0 +1,78 @@
+---
+import Logo from "../icons/Logo.astro";
+import GithubIcon from "../icons/GithubIcon.astro";
+import SunIcon from '../icons/SunIcon.astro'
+import MoonIcon from '../icons/MoonIcon.astro'
+
+
+type Nav = {
+  name: string
+  link: string | null
+}
+
+const navigation: Nav[]  = [
+  {
+    name: 'Docs',
+    link: '/Docs'
+  },
+  {
+    name: 'Components',
+    link: '/Components'
+  },
+  {
+    name: 'v1.0.0',
+    link: null
+  }
+]
+---
+
+<header class='w-full h-10 flex justify-between items-center'>
+  <Logo />
+  <nav>
+    <ul class='flex gap-7 text-lg'>
+      {navigation.map(nav => (
+        <li class={`opacity-90 font-medium ${nav.link && 'hover:opacity-40 transition-opacity duration-200'  }`}>
+          <a  href={nav?.link}>
+            {nav.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+  <nav>
+    <ul class='flex gap-3'>
+      <li class='cursor-pointer hover:opacity-40 transition-opacity duration-200'>
+        <a href="https://github.com">
+          <GithubIcon />
+        </a>
+      </li>
+      <li class='switcher cursor-pointer hover:opacity-40 transition-opacity duration-200'>
+        <div class='sun'>
+          <SunIcon />
+        </div>
+        <div class='moon hidden'>
+          <MoonIcon />
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const $Switcher = document.querySelector('.switcher')
+  const $Sun = document.querySelector('.sun')
+  const $Moon = document.querySelector('.moon')
+  const html = document.documentElement
+
+  $Switcher?.addEventListener('click', () => {
+    html.classList.toggle('dark')
+    if (html.classList.contains('dark')) {
+      $Moon?.classList.replace('hidden', 'block')
+      $Sun?.classList.add('hidden')
+    } else {
+      $Moon?.classList.replace('block', 'hidden')
+      $Sun?.classList.replace('hidden', 'flex')
+    }
+  })
+
+</script>
