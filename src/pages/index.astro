@@ -1,8 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro'
+import LandingHeader from '../components/Landing/LandingHeader.astro'
 ---
 
-<Layout title="Cool components.">
-    <h1 class='text-red-500'>hello</h1>
+<Layout title="T-components">
+  <div class='max-w-6xl mx-auto py-5'>
+    <LandingHeader />
+    <main class="h-[30vh] flex justify-center items-center flex-col">
+      <h1 class="text-white text-6xl font-heading">
+        T-components Liked? Copy and ready to go.
+      </h1>
+    </main>
+  </div>
 </Layout>
-
