@@ -47,10 +47,10 @@ const navigation: Nav[]  = [
         </a>
       </li>
       <li class='switcher cursor-pointer hover:opacity-40 transition-opacity duration-200'>
-        <div class='sun'>
+        <div class='sun hidden'>
           <SunIcon />
         </div>
-        <div class='moon hidden'>
+        <div class='moon'>
           <MoonIcon />
         </div>
       </li>
@@ -67,11 +67,11 @@ const navigation: Nav[]  = [
   $Switcher?.addEventListener('click', () => {
     html.classList.toggle('dark')
     if (html.classList.contains('dark')) {
-      $Moon?.classList.replace('hidden', 'block')
-      $Sun?.classList.add('hidden')
+      $Sun?.classList.replace('hidden', 'block')
+      $Moon?.classList.add('hidden')
     } else {
-      $Moon?.classList.replace('block', 'hidden')
-      $Sun?.classList.replace('hidden', 'flex')
+      $Sun?.classList.replace('block', 'hidden')
+      $Moon?.classList.replace('hidden', 'flex')
     }
   })
 
