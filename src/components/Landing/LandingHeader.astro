@@ -13,16 +13,13 @@ type Nav = {
 const navigation: Nav[]  = [
   {
     name: 'Docs',
-    link: '/Docs'
+    link: '/docs'
   },
   {
     name: 'Components',
-    link: '/Components'
+    link: '/components'
   },
-  {
-    name: 'v1.0.0',
-    link: null
-  }
+  
 ]
 ---
 
@@ -31,18 +28,21 @@ const navigation: Nav[]  = [
   <nav>
     <ul class='flex gap-7 text-lg'>
       {navigation.map(nav => (
-        <li class={`opacity-90 font-medium ${nav.link && 'hover:opacity-40 transition-opacity duration-200'  }`}>
-          <a  href={nav?.link}>
+        <li class='opacity-90 font-medium hover:opacity-40 transition-opacity duration-200'>
+          <a href={nav?.link}>
             {nav.name}
           </a>
         </li>
       ))}
+      <li class='opacity-90 font-medium'>
+        <span>v1.0.0</span>
+      </li>
     </ul>
   </nav>
   <nav>
     <ul class='flex gap-3'>
       <li class='cursor-pointer hover:opacity-40 transition-opacity duration-200'>
-        <a href="https://github.com">
+        <a aria-label='Link to github repository' href="https://github.com/Vengxdor/T-components">
           <GithubIcon />
         </a>
       </li>
