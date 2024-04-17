@@ -63,16 +63,13 @@ const navigation: Nav[]  = [
   const $Sun = document.querySelector('.sun')
   const $Moon = document.querySelector('.moon')
   const html = document.documentElement
-
+ 
   $Switcher?.addEventListener('click', () => {
     html.classList.toggle('dark')
-    if (html.classList.contains('dark')) {
-      $Sun?.classList.replace('hidden', 'block')
-      $Moon?.classList.add('hidden')
-    } else {
-      $Sun?.classList.replace('block', 'hidden')
-      $Moon?.classList.replace('hidden', 'flex')
-    }
+    const isDark = html.classList.contains('dark')
+    $Moon?.classList.toggle('hidden', isDark)
+    $Sun?.classList.toggle('hidden', !isDark)
+    $Sun?.classList.toggle('flex', !isDark)
   })
 
 </script>
