@@ -5,6 +5,8 @@ interface Props {
 
 const { title } = Astro.props
 import { ViewTransitions } from 'astro:transitions';
+import LandingHeader from '../components/Landing/LandingHeader.astro';
+
 ---
 
 <!doctype html>
@@ -21,6 +23,7 @@ import { ViewTransitions } from 'astro:transitions';
   <body>
     <div id="app" class="relative h-dvh w-dvw bg-background dark:bg-white">
       <div class="relative z-10 lg:max-w-4xl xl:max-w-6xl mx-auto py-10">
+        <LandingHeader />
         <slot />
       </div>
       <div
