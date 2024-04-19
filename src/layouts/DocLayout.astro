@@ -1,0 +1,18 @@
+---
+import DocsAside from '../components/doc/DocsAside.astro'
+import Layout from './Layout.astro'
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<Layout title={title}>
+  <main class='flex'>
+    <DocsAside />
+    <slot />
+  </main>
+</Layout>
+
