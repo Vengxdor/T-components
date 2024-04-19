@@ -1,22 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import LandingHeader from '../components/Landing/LandingHeader.astro'
 import GithubIcon from '../components/icons/GithubIcon.astro'
 ---
 
-<Layout title="T-components">
-    <LandingHeader />
+<Layout title="T-components - A Set of Components to Make Development with Tailwind Faster and Easier">
     <main class="h-[60vh] flex justify-center flex-col">
       <section>
         <h1 class="text-white text-4xl w-[20ch] text-balance">
           Create nice looking websites the <span class='text-accent'>fastest</span> way possible.
         </h1>
         <div class='flex gap-3 items-center mt-6 *:p-3 *:px-8 *:rounded-2xl *:transition *:duration-300'>
-          <a href='/docs' class='bg-accent border border-purple-900/40 hover:bg-accent/80 hover:-translate-y-1 active:scale-95'>
+          <a href='/docs/introduction' class='bg-accent border border-purple-900/40 hover:bg-accent/80 hover:-translate-y-1 active:scale-95'>
             Get Started
           </a>
           <a  target='_blank' href='https://github.com/Vengxdor/T-components' class='flex items-center gap-2 border-2 border-white/45 hover:border-white/20 active:scale-95'>
-              <GithubIcon className='size-6'/>
+            <GithubIcon className='size-6'/>
             Github
           </a>
         </div>
