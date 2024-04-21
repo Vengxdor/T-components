@@ -6,40 +6,29 @@ const url = Astro.url.pathname
 interface Items {
   name?: string
   href?: string
-  title?: string
 }
 
 
 const AsideItems: Items[] = [
   {
-    title: 'Guide'
-  },
-  {
-    name: 'Introduction',
-    href: '/docs/introduction',
-  },
-  {
-    title: 'Components'
+    name: 'Buttons',
+    href: '/components/buttons'
   },
   {
     name: 'Buttons',
-    href: '/docs/components/buttons'
+    href: '/components/buttons'
   },
-  
 ]
 ---
 
-<aside class='w-1/5'>
-  <ul class='grid gap-0.5'>
+<aside class='w-1/5 '>
+  <ul class='grid gap-2'>
     {AsideItems.map(item => (
       <li>
         {item.href &&
-          <a class='ml-4 opacity-70 hover:opacity-90 transition duration-300' class:list={[url === item.href && 'text-purple-600']} href={item.href}>
-            • {item.name}
+          <a class='flex rounded-md p-2 font-semibold bg-zinc-900/60 text-white/60 hover:text-white  hover:bg-zinc-900 transition duration-300' class:list={[url === item.href && 'bg-zinc-900/80']} href={item.href}>
+            {item.name}
           </a>
-        }
-        {item.title &&
-          <h3 class='text-xl my-2'>{item.title}</h3>
         }
       </li>
     ))}

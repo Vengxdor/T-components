@@ -11,20 +11,17 @@ type Nav = {
 }
 
 const navigation: Nav[]  = [
-  {
-    name: 'Docs',
-    link: '/docs/introduction'
-  },
+  
   {
     name: 'Components',
-    link: '/docs/components/buttons'
+    link: '/components/buttons'
   },
   
 ]
 ---
 
 <header class='w-full h-10 flex justify-between items-center mb-8'>
-  <a href="/">
+  <a aria-label='T-components logo for returning to menu.' href="/">
     <Logo />
   </a>
   <nav>
